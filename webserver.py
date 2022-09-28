@@ -20,10 +20,10 @@ while True:
         if req_text.find('\r\n\r\n'):
             break
         req = new_socket.recv(4096)
-    resp = 'HTTP/1.1 200 OK\n\
-Content-Type: text/plain\n\
-Content-Length: 6\n\
-Connection: close\n\n\
+    resp = 'HTTP/1.1 200 OK\r\n\
+Content-Type: text/plain\r\n\
+Content-Length: 6\r\n\
+Connection: close\r\n\r\n\
 Hello!'.encode("ISO-8859-1")
     new_socket.sendall(resp)
     print("Found end of line. Closing new socket")
